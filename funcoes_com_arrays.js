@@ -78,11 +78,11 @@ console.log(removerElementoEspecifico(7));
 //exercicio 7
 function inserirNaPosicaoCorreta(valor) {
     if (typeof valor === 'number') {
-      listaDeElementos.unshift(valor); // insere no início da lista
-    } else if (typeof valor === 'string') {
-      listaDeElementos.push(valor); // insere no final da lista
+      listaDeElementos.unshift(valor);
     } else {
-      return "Valor inválido, a função recebe apenas valores numéricos de 0 a 10 ou strings.";
+      listaDeElementos.push(valor);
     }
     return "Lista atualizada com sucesso.";
 }
+
+console.log(inserirNaPosicaoCorreta("10"))
