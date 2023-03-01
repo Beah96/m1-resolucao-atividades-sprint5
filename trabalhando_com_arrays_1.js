@@ -1,130 +1,89 @@
-// Resoluções⁠
+// Exercícios
 
 /*
-1.  Escreva uma função que receba uma lista A de dimensão 30 composta apenas por números inteiros.
-
-    A função deve retornar a quantidade de valores pares e ímpares existentes na lista recebida.
-
-    Exemplos de saída:
-    A lista recebida possui x elementos pares e y elementos ímpares.
+1.  Escreva uma função que recebe um valor do tipo string e com no mínimo 5 caracteres. 
+    Insira o valor recebido em um array e retorne o array gerado.
 */
-
-let list30Elements = [
-  23, 45, 12, 78, 36, 9, 52, 67, 18, 31, 59, 81, 44, 6, 97, 22, 73, 10, 51, 68,
-  3, 88, 29, 41, 65, 17, 94, 55, 80, 27,
-];
-
-function identifiesEvenOdd(listA) {
-  let amountOfEven = 0;
-  let amountOfOdd = 0;
-
-  for (let index = 0; index < listA.length; index++) {
-    const element = listA[index];
-
-    if (element % 2 === 0) {
-      amountOfEven++;
-    } else {
-      amountOfOdd++;
-    }
+function convertStringToArray(text) {
+  if (text.length < 5 || typeof text !== "string") {
+    return "Texto precisa ter pelo menos 5 caracteres e ser do tipo string";
   }
 
-  let result = `A lista recebida possui ${amountOfEven} elementos pares e ${amountOfOdd} elementos impares.`;
+  let array = [text];
 
-  return result;
+  return array;
 }
 
-console.log(identifiesEvenOdd(list30Elements)); // resultado A lista recebida possui 13 elementos pares e 17 elementos impares.
+console.log(convertStringToArray("string"));
+// retorno [ 'string' ]
+
+////////////////////////////////////////////////////////////////
+/*
+2. Escreva uma função que recebe um valor do tipo number. Use o valor recebido para acessar uma posição do seguinte array:
+
+let arr = ["Hermanoteu", "Olonéia", "Migalatéia", "Godart"]⁠
+
+Caso a posição exista, retorne o nome que se encontra nela. ⁠Caso não seja acessado nenhuma posição com o valor recebido, ⁠alerte: "Valor não encontrado".
+*/
+
+////////////////////////////////////////////////////////////////
+/*
+3. Crie um array de números, contendo os valores de 1 a 10. Crie uma função que recebe um número inteiro.
+
+Acesse a posição do array de números usando o valor recebido. Teste se o valor contido na posição é par ou ímpar.
+
+Caso seja par retorne: "O valor encontrado nesta posição é par",
+Caso seja ímpar retorne: "O valor encontrado nesta posição é ímpar".
+*/
 
 /*
-2.  Escreva uma função que recebe uma lista A de tamanho 10, composta por números inteiros.
+Dado o array de nomes:
+⁠let nomes = ["Pedro", "Rafael", "José"]⁠
 
-    Retorne o total de elementos ímpares existentes na matriz e também o percentual do valor total de números ímpares em relação à quantidade total de elementos armazenados na matriz.
+Crie uma função que recebe a lista de nomes como parâmetro. A função deve verificar qual dos nomes da lista tem a maior quantidade de caracteres e retornar o nome.
 
-    Retorne o seguinte texto: "O total de valores ímpares é x e corresponde a y% da lista"
+Teste cada posição usando estrutura de repetição, a menos que a lista tenha apenas um valor inserido.
+
+Use este formato: "O nome x é o maior da lista";
 */
-
-let list10Elements = [57, 87, 92, 1, 36, 29, 48, 44, 52, 66];
-
-function identifiesOddInList(listA) {
-  let listSize = 10;
-  let amountOfOdd = 0;
-
-  for (let index = 0; index < listSize; index++) {
-    const element = listA[index];
-
-    if (element % 2 !== 0) {
-      amountOfOdd++;
-    }
-  }
-
-  let percentageOfOdd = (amountOfOdd / listSize) * 100;
-
-  let result = `O total de valores ímpares é ${amountOfOdd} e corresponde a ${percentageOfOdd}% da lista`;
-
-  return result;
-}
-
-console.log(identifiesOddInList(list10Elements)); // retorno => O total de valores ímpares é 4 e corresponde a 40% da lista
 
 /*
-3. Escreva uma função que receba como parâmetro duas listas A e B, cada uma com dez elementos.
+Dado o array de números como exemplo:
+⁠numeros = [1,4,6,9,11,8]
 
-    A função deve realizar a validação do tamanho da lista. Caso sejam maiores ou menores que 10, retorne: "Lista fora dos padrões necessários".
 
-    A lista A deve ser composta por valores divisíveis por 2 e 3, enquanto a lista B deve ser composta apenas por valores múltiplos de 5.
+Escreva uma função que recebe a lista de números como parâmetro. A função deve realizar a soma dos valores das duas últimas posições da lista e armazenar o valor da soma em uma variável.
 
-    A composição das listas deve ser validada pela função. Caso a composição não esteja correta, retorne: "Valores não permitidos encontrados".
+Use a variável para testar se o valor da soma é um múltiplo de 2.
 
-    Construir uma lista C que seja o resultado da junção das listas A e B, de modo que contenha 20 elementos.
-
-    Retorne a lista C resultante.
+Se sim, retorne: "A soma é um múltiplo de 2".
+Caso contrário: "A soma não é um múltiplo de 2"
 */
 
-let listATenElements = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60];
-let listBTenElements = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+/*
+6. Dado o array de nomes como exemplo:
+⁠let nomes = ["Pedro", "Rafael", "José", "Carla", "Maria", "Josef", "Raquel"]⁠
 
-function generateList(listA, listB) {
-  const checkListPattern = listA.length < 10 || listB.length < 10;
+Escreva uma função que recebe como parâmetros a lista de nomes, um nome (string) e um valor inteiro (number) para representar a posição.
 
-  if (checkListPattern) {
-    return "Lista fora dos padrões necessários";
-  }
+Acesse a lista na posição que corresponde ao valor inteiro recebido e armazene o valor contido na posição em uma variável.
 
-  let divisibleByTwoOrThree = true;
-  let onlyMultiplesOfFive = true;
+Teste se o nome recebido pela função como parâmetro é o mesmo que o armazenado na variável.
 
-  for (let index = 0; index < 10; index++) {
-    const elementA = listA[index];
-    const elementB = listB[index];
+Lembre-se de normalizar os dados antes de testar.
 
-    if (elementA % 2 !== 0 || elementA % 3 !== 0) {
-      divisibleByTwoOrThree = false;
-      break;
-    } else if (elementB % 5 !== 0) {
-      onlyMultiplesOfFive = false;
-      break;
-    }
-  }
+Caso os valores sejam iguais, retorne: "Acertei".
+Caso não sejam, retorne: "Não é quem eu pensava"
+*/
 
-  let listComposition = !divisibleByTwoOrThree || !onlyMultiplesOfFive;
+/*
+7. Dado dois arrays numéricos como exemplo.
+⁠let numeros = [1,2,3,4,5,6,10]
+⁠let outrosNumeros = [5,7,9,4,2,3,9]
 
-  if (listComposition) {
-    return "Valores não permitidos encontrados";
-  }
+Escreva uma função que recebe as duas listas de números como parâmetro. A função deve conseguir identificar qual dos dois arrays é o maior.
 
-  let listC = [];
+Após identificar o maior array, retorne o último elemento do array.
 
-  for (let index = 0; index < 10; index++) {
-    const elementA = listA[index];
-    const elementB = listB[index];
-    listC.push(elementA, elementB);
-  }
-
-  // podemos ter o mesmo resultado, de modo mais pratico usando operador spread, exemplo:
-  //let listC = [...listA, ...listB];
-
-  return listC;
-}
-
-console.log(generateList(listATenElements, listBTenElements));
-// retorno => [6, 5, 12, 10, 18, 15, 24, 20, 30, 25, 36, 30, 42, 35, 48, 40, 54, 45, 60, 50]
+Use este formato: "A maior lista é a lista cujo último número é: x"
+*/
