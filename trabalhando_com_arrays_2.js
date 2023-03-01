@@ -36,8 +36,6 @@ function identifiesEvenOdd(listA) {
 console.log(identifiesEvenOdd(list30Elements));
 // resultado: A lista recebida possui 13 elementos pares e 17 elementos impares.
 
-////////////////////////////////////////////////////////////////
-
 /*
   2.  Escreva uma função que recebe uma lista A de tamanho 10, composta por números inteiros.
   
@@ -67,9 +65,8 @@ function identifiesOddInList(listA) {
   return result;
 }
 
-console.log(identifiesOddInList(list10Elements)); // retorno => O total de valores ímpares é 4 e corresponde a 40% da lista
-
-////////////////////////////////////////////////////////////////
+console.log(identifiesOddInList(list10Elements));
+// resultado: O total de valores ímpares é 4 e corresponde a 40% da lista
 
 /*
   3. Escreva uma função que receba como parâmetro duas listas A e B, cada uma com dez elementos.
@@ -132,4 +129,4 @@ function generateList(listA, listB) {
 }
 
 console.log(generateList(listATenElements, listBTenElements));
-// retorno => [6, 5, 12, 10, 18, 15, 24, 20, 30, 25, 36, 30, 42, 35, 48, 40, 54, 45, 60, 50]
+// resultado => [6, 5, 12, 10, 18, 15, 24, 20, 30, 25, 36, 30, 42, 35, 48, 40, 54, 45, 60, 50]
