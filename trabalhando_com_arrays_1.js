@@ -14,8 +14,8 @@ function convertStringToArray(text) {
   return array;
 }
 
-console.log(convertStringToArray("string"));
-// resultado [ 'string' ]
+console.log(convertStringToArray("Kenzie"));
+// resultado [ 'Kenzie' ]
 
 /*
 2.  Escreva uma função que recebe um valor do tipo number. 
@@ -29,8 +29,6 @@ console.log(convertStringToArray("string"));
 let arr = ["Hermanoteu", "Olonéia", "Migalatéia", "Godart"];
 
 function findElementArray(numberParam) {
-  console.log(typeof numberParam);
-
   if (typeof numberParam !== "number") {
     return "O argumento precisa ser do tipo 'number";
   }
@@ -44,7 +42,8 @@ function findElementArray(numberParam) {
   return "Valor não encontrado";
 }
 
-console.log(findElementArray(10));
+console.log(findElementArray(2));
+// Resultado: Migalatéia
 
 /*
 3.  Crie um array de números, contendo os valores de 1 a 10.
@@ -149,29 +148,79 @@ console.log(checkMultipleTwo(numeros));
 // Resultado: A soma não é um múltiplo de 2
 
 /*
-6. Dado o array de nomes como exemplo:
-⁠let nomes = ["Pedro", "Rafael", "José", "Carla", "Maria", "Josef", "Raquel"]⁠
+6.  Dado o array de nomes como exemplo:
+    ⁠let nomes = ["Pedro", "Rafael", "José", "Carla", "Maria", "Josef", "Raquel"]⁠
 
-Escreva uma função que recebe como parâmetros a lista de nomes, um nome (string) e um valor inteiro (number) para representar a posição.
+    Escreva uma função que recebe como parâmetros a lista de nomes, 
+    um nome (string) e um valor inteiro (number) para representar a posição.
 
-Acesse a lista na posição que corresponde ao valor inteiro recebido e armazene o valor contido na posição em uma variável.
+    Acesse a lista na posição que corresponde ao valor inteiro recebido 
+    e armazene o valor contido na posição em uma variável.
 
-Teste se o nome recebido pela função como parâmetro é o mesmo que o armazenado na variável.
+    Teste se o nome recebido pela função como parâmetro 
+    é o mesmo que o armazenado na variável.
 
-Lembre-se de normalizar os dados antes de testar.
+    Lembre-se de normalizar os dados antes de testar.
 
-Caso os valores sejam iguais, retorne: "Acertei".
-Caso não sejam, retorne: "Não é quem eu pensava"
+    Caso os valores sejam iguais, retorne: "Acertei".
+    Caso não sejam, retorne: "Não é quem eu pensava"
 */
+
+let nameList2 = [
+  "Pedro",
+  "Rafael",
+  "José",
+  "Carla",
+  "Maria",
+  "Josef",
+  "Raquel",
+];
+
+function checkNameInList(nameList, name, index) {
+  const nameInLowerCase = name.toLowerCase();
+  const nameFoundInLowerCase = nameList[index].toLowerCase();
+
+  if (nameInLowerCase === nameFoundInLowerCase) {
+    return "Acertei";
+  }
+  return "Não é quem eu pensava";
+}
+
+console.log(checkNameInList(nameList2, "Pedro", 1));
+// Resultado: Não é quem eu esperava
 
 /*
-7. Dado dois arrays numéricos como exemplo.
-⁠let numeros = [1,2,3,4,5,6,10]
-⁠let outrosNumeros = [5,7,9,4,2,3,9]
+7.  Dado dois arrays numéricos como exemplo.
+    ⁠let numeros = [1,2,3,4,5,6,10]
+    ⁠let outrosNumeros = [5,7,9,4,2,3,9]
 
-Escreva uma função que recebe as duas listas de números como parâmetro. A função deve conseguir identificar qual dos dois arrays é o maior.
+    Escreva uma função que recebe as duas listas de números como parâmetro. 
+    A função deve conseguir identificar qual dos dois arrays é o maior.
 
-Após identificar o maior array, retorne o último elemento do array.
+    Após identificar o maior array, retorne o último elemento do array.
 
-Use este formato: "A maior lista é a lista cujo último número é: x"
+    Use este formato: "A maior lista é a lista cujo último número é: x"
 */
+
+let numbers = [1, 2, 3, 4, 5, 6, 10, 7];
+let otherNumbers = [5, 7, 9, 4, 2, 3, 9];
+
+function biggerList(listA, listB) {
+  const sizeOfListA = listA.length;
+  const sizeOfListB = listB.length;
+  let biggerListSize = null;
+  let lastNumberOfBiggestList = null;
+
+  if (sizeOfListA > sizeOfListB) {
+    biggerListSize = listA;
+  } else {
+    biggerListSize = listB;
+  }
+
+  lastNumberOfBiggestList = biggerListSize[biggerListSize.length - 1];
+
+  return `A maior lista é a lista cujo último número é: ${lastNumberOfBiggestList}`;
+}
+
+console.log(biggerList(numbers, otherNumbers));
+// Resultado: A maior lista é a lista cujo último número é: 7;
