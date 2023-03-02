@@ -1,21 +1,20 @@
 // Exercícios
 
 /*
-1.  Escreva uma função que recebe um valor do tipo string e com no mínimo 5 caracteres. 
+1.  Escreva uma função que recebe um valor do tipo string
+    e com no mínimo 5 caracteres. 
     Insira o valor recebido em um array e retorne o array gerado.
 */
 function convertStringToArray(text) {
-  if (text.length < 5 || typeof text !== "string") {
-    return "Texto precisa ter pelo menos 5 caracteres e ser do tipo string";
+  if (typeof text !== "string" || text.length < 5) {
+    return "O texto precisa ser do tipo string e ter pelo menos 5 caracteres.";
   }
 
-  let array = [text];
-
-  return array;
+  return [text];
 }
 
-console.log(convertStringToArray("Kenzie"));
-// resultado [ 'Kenzie' ]
+console.log("1.", convertStringToArray("Kenzie"));
+// resultado: 1. [ 'Kenzie' ]
 
 /*
 2.  Escreva uma função que recebe um valor do tipo number. 
@@ -33,17 +32,17 @@ function findElementArray(numberParam) {
     return "O argumento precisa ser do tipo 'number";
   }
 
-  let findElement = arr[numberParam];
+  let element = arr[numberParam];
 
-  if (findElement) {
-    return findElement;
+  if (element) {
+    return element;
   }
 
   return "Valor não encontrado";
 }
 
-console.log(findElementArray(2));
-// Resultado: Migalatéia
+console.log("2.", findElementArray(2));
+// Resultado: 2. Migalatéia
 
 /*
 3.  Crie um array de números, contendo os valores de 1 a 10.
@@ -69,8 +68,8 @@ function checkOddOrEven(integerNumber) {
   return "O valor encontrado nesta posição é par";
 }
 
-console.log(checkOddOrEven(2));
-// Resultado: O valor encontrado nesta posição é ímpar
+console.log("3.", checkOddOrEven(2));
+// Resultado: 3. O valor encontrado nesta posição é ímpar
 
 /*
 4.  Dado o array de nomes:
@@ -91,6 +90,10 @@ function findBiggerName(nameList) {
   let lengthNameList = nameList.length;
   let biggerName = nameList[0];
 
+  if (lengthNameList === 0) {
+    return "A lista está vazia";
+  }
+
   if (lengthNameList === 1) {
     return `O nome ${biggerName} é o maior da lista, até por que é o unico ;)`;
   }
@@ -105,8 +108,8 @@ function findBiggerName(nameList) {
   return `O nome ${biggerName} é o maior da lista`;
 }
 
-console.log(findBiggerName(nomes));
-// Resultado: O nome Rafael é o maior da lista;
+console.log("4.", findBiggerName(nomes));
+// Resultado: 4. O nome Rafael é o maior da lista;
 
 /*
 5.  Dado o array de números como exemplo:
@@ -126,13 +129,15 @@ console.log(findBiggerName(nomes));
 let numeros = [1, 4, 6, 9, 11, 8];
 
 function checkMultipleTwo(numberList) {
-  let sumResult = null;
-  let result = null;
+  let sumResult = 0;
+  let result = false;
   let numberListLength = numberList.length;
 
-  for (let i = numberListLength - 2; i < numberListLength; i++) {
-    const currentNumber = numberList[i];
-    sumResult += currentNumber;
+  if (numberListLength >= 2) {
+    const lastNumber = numberList[numberListLength - 1];
+    const secondLastNumber = numberList[numberListLength - 2];
+    sumResult = lastNumber + secondLastNumber;
+    result = sumResult % 2 === 0;
   }
 
   result = sumResult % 2 === 0;
@@ -144,8 +149,8 @@ function checkMultipleTwo(numberList) {
   return "A soma não é um múltiplo de 2";
 }
 
-console.log(checkMultipleTwo(numeros));
-// Resultado: A soma não é um múltiplo de 2
+console.log("5.", checkMultipleTwo(numeros));
+// Resultado: 5. A soma não é um múltiplo de 2
 
 /*
 6.  Dado o array de nomes como exemplo:
@@ -176,18 +181,19 @@ let nameList2 = [
   "Raquel",
 ];
 
-function checkNameInList(nameList, name, index) {
-  const nameInLowerCase = name.toLowerCase();
-  const nameFoundInLowerCase = nameList[index].toLowerCase();
+function findNameInList(list, name, index) {
+  const nameToFind = name.toLowerCase();
+  const nameInList = list[index].toLowerCase();
 
-  if (nameInLowerCase === nameFoundInLowerCase) {
+  if (nameToFind === nameInList) {
     return "Acertei";
   }
+
   return "Não é quem eu pensava";
 }
 
-console.log(checkNameInList(nameList2, "Pedro", 1));
-// Resultado: Não é quem eu esperava
+console.log("6.", findNameInList(nameList2, "Pedro", 1));
+// Resultado: 6.: Não é quem eu esperava
 
 /*
 7.  Dado dois arrays numéricos como exemplo.
@@ -222,5 +228,5 @@ function biggerList(listA, listB) {
   return `A maior lista é a lista cujo último número é: ${lastNumberOfBiggestList}`;
 }
 
-console.log(biggerList(numbers, otherNumbers));
-// Resultado: A maior lista é a lista cujo último número é: 7;
+console.log("7.", biggerList(numbers, otherNumbers));
+// Resultado: 7. A maior lista é a lista cujo último número é: 7;
