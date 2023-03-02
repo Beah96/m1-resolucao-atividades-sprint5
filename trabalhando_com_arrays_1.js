@@ -197,7 +197,7 @@ console.log("6.", findNameInList(nameList2, "Pedro", 1));
 
 /*
 7.  Dado dois arrays numéricos como exemplo.
-    ⁠let numeros = [1,2,3,4,5,6,10]
+    ⁠let numeros = [1,2,3,4,5,6,10,7]
     ⁠let outrosNumeros = [5,7,9,4,2,3,9]
 
     Escreva uma função que recebe as duas listas de números como parâmetro. 
